@@ -11,31 +11,49 @@ function App() {
   const {
     search,
     setSearch,
-    user,
     more,
     loading,
     filterList,
-    fetchAPI,
     consultNewData,
+    setList,
+    setLoading,
+    user,
   } = useData();
 
   useEffect(() => {
-    fetchAPI();
-  }, [user]);
+    const url = `https://jsonplaceholder.typicode.com/users/${user}/posts`;
+    fetch(url)
+      .then(response => response.json())
+      .then(data => {
+        setList(prevList => prevList.concat(data));
+      })
+      .catch(error => console.log(error));
+
+    setLoading(false);
+  }, [user, setList, setLoading]);
 
   return (
     <>
       <Header search={search} setSearch={setSearch} />
       <InfiniteScroll
         dataLength={filterList.length}
-        next={consultNewData}
+        next={search.length < 1 && consultNewData}
         hasMore={more}
         scrollThreshold={0.9}
-        loader={!loading && <Spinner />}
+        loader={!loading && search.length < 1 && <Spinner />}
       >
         <div className="container">
           {loading ? <Spinner /> : <List filterList={filterList} />}
         </div>
+
+        {search.length > 0 && (
+          <div className="text-center p-3 ">
+            <p className="new-data">
+              El buscador debe de estar vacío si usted desea obtener nuevo
+              datos.
+            </p>
+          </div>
+        )}
       </InfiniteScroll>
       <ScrollButton />
     </>

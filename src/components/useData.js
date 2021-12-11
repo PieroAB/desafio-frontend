@@ -9,18 +9,6 @@ function useData() {
 
   let filterList = [];
 
-  const fetchAPI = async () => {
-    const url = `https://jsonplaceholder.typicode.com/users/${user}/posts`;
-    fetch(url)
-      .then(response => response.json())
-      .then(data => {
-        setList([...list, ...data]);
-      })
-      .catch(error => console.log(error));
-
-    setLoading(false);
-  };
-
   const consultNewData = () => {
     if (user >= 10) {
       setMore(false);
@@ -44,13 +32,13 @@ function useData() {
   return {
     search,
     setSearch,
-    user,
     more,
     loading,
-    list,
     filterList,
-    fetchAPI,
     consultNewData,
+    setList,
+    setLoading,
+    user,
   };
 }
 

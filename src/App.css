@@ -91,3 +91,10 @@ ul {
   right: 15px;
   z-index: 150;
 }
+
+.new-data {
+  font-size: 0.9em;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #ff0000;
+}

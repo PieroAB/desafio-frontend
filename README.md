@@ -1,6 +1,7 @@
 ## Contenido
 
 - Resumen
+- Objetivos
 - Librerías y dependencias
 - Herramientas
 - Demo
@@ -10,7 +11,7 @@
 
 ## Resumen
 
-Desafío realizado en React usando los principales hooks(useState, useEffect y memo), el uso de fetch para el consumo la API y también se usó el método filter para filtrar los elementos de un array.
+Desafío realizado en React usando los principales hooks(useState, useEffect y memo), el uso de fetch para el consumo de la API y también se usó el método filter para filtrar los elementos de un array.
 
 Aparte se usó la metodologia BEM para definir la estructura de nombrar las clases CSS y así crear componentes escalables y reutilizables.
 
@@ -19,8 +20,9 @@ Para el deployment se usó Github Pages.
 ## Objetivos
 
 Este desafío en la cuál fui asignado cumple con los siguientes objetivos:
-• Listado de comentarios de un determinado usuario consumiendo una API.
-• Filtrado por el título de la publicación sin la necesidad de un nuevo request.
+
+1. Listado de comentarios de un determinado usuario consumiendo una API.
+2. Filtrado por el título de la publicación sin la necesidad de un nuevo request.
 
 ## Librerías y dependencias
 
