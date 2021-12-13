@@ -13,7 +13,6 @@
 
 Desafío realizado en React usando los principales hooks(useState, useEffect y memo), el uso de fetch para el consumo de la API y también se usó el método filter para filtrar los elementos de un array.
 
-Aparte se usó la metodologia BEM para definir la estructura de nombrar las clases CSS y así crear componentes escalables y reutilizables.
 
 Para el deployment se usó Github Pages.
 
